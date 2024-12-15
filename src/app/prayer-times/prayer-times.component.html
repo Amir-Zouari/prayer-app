@@ -1,0 +1,37 @@
+<div class="prayer-times-container">
+  <h1 class="today-heading">{{today}}</h1>
+  <div class="prayer-times-card">
+    <ul class="prayer-times-list">
+      <li class="prayer-time-item d-flex justify-content-between align-items-center mb-2">
+        <span class="prayer-icon">🕔</span>
+        <span class="prayer-name">Sobh:</span> 
+        <span class="prayer-time">{{ prayerTimes["sobh"] }}</span>
+      </li>
+      <li class="prayer-time-item d-flex justify-content-between align-items-center mb-2">
+        <span class="prayer-icon">🕛</span>
+        <span class="prayer-name">Dhohr:</span> 
+        <span class="prayer-time">{{ prayerTimes["dhohr"] }}</span>
+      </li>
+      <li class="prayer-time-item d-flex justify-content-between align-items-center mb-2">
+        <span class="prayer-icon">🕓</span>
+        <span class="prayer-name">Aser:</span> 
+        <span class="prayer-time">{{ prayerTimes["aser"] }}</span>
+      </li>
+      <li class="prayer-time-item d-flex justify-content-between align-items-center mb-2">
+        <span class="prayer-icon">🕖</span>
+        <span class="prayer-name">Magreb:</span> 
+        <span class="prayer-time">{{ prayerTimes["magreb"] }}</span>
+      </li>
+      <li class="prayer-time-item d-flex justify-content-between align-items-center mb-2">
+        <span class="prayer-icon">🕘</span>
+        <span class="prayer-name">Isha:</span> 
+        <span class="prayer-time">{{ prayerTimes["isha"] }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <h2 class="countdown-heading">Next Prayer Countdown</h2>
+  <div class="countdown-timer">
+    <p class="display-4">{{ remainingTime }}</p>
+  </div>
+</div>

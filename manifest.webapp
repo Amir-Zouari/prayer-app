@@ -1,0 +1,17 @@
+{
+  "name": "Prayer Times",
+  "description": "Daily prayer times for Sfax.",
+  "launch_path": "/index.html",
+  "icons": {
+    "60": "/icon-60.png",
+    "128": "/icon-128.png"
+  },
+  "developer": {
+    "name": "Amir Zouari",
+    "url": "https://yourwebsite.com"
+  },
+  "type": "web",
+  "permissions": {
+    "systemXHR": {}
+  }
+}

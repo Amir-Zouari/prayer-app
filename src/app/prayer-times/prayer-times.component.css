@@ -1,0 +1,96 @@
+h1, h2 {
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    font-size: 20px;
+  }
+  
+  p {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+.prayer-times-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.today-heading {
+    font-size: 2.5em;
+    text-align: center;
+    color: #333;
+}
+
+.prayer-times-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.prayer-time-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.prayer-name {
+    font-weight: bold;
+}
+
+.countdown-heading {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+.countdown-timer {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 15px;
+    background-color: #e7f3fe;
+    border: 1px solid #b3d7ff;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.prayer-times-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.prayer-time-item:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.prayer-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+    .prayer-times-container {
+        padding: 10px;
+    }
+    .today-heading {
+        font-size: 2em;
+    }
+    .countdown-heading {
+        font-size: 1.5em;
+    }
+}
