@@ -66,22 +66,28 @@ h1, h2 {
 }
 
 .prayer-times-card {
-    background-color: #ffffff;
+    background-color: #3d5a80;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
-.prayer-time-item:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
+.prayer-icon {
+    display: inline-block; /* Ensure the icon behaves like an inline element */
+    width: 24px; /* Set a specific width for the icon */
+    height: 24px; /* Set a specific height for the icon */
+    margin-right: 10px; /* Add consistent spacing between the icon and prayer name */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
 }
 
-.prayer-icon {
-    font-size: 1.5em;
-    margin-right: 10px;
+.prayer-time-item {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: start; /* Ensure items are aligned to the left */
+    gap: 10px; /* Optional: Define a gap between flex items for consistent spacing */
 }
+
 
 @media (max-width: 600px) {
     .prayer-times-container {
@@ -94,3 +100,19 @@ h1, h2 {
         font-size: 1.5em;
     }
 }
+
+.icon-subh {
+    background-image: url('../../assets/icons/type1/subah-prayer.png'); /* Adjust path as needed */
+  }
+.icon-dhuhr {
+    background-image: url('../../assets/icons/type1/subah-prayer.png'); /* Adjust path as needed */
+  }
+.icon-asr {
+    background-image: url('../../assets/icons/type1/subah-prayer.png'); /* Adjust path as needed */
+  }
+.icon-maghrib {
+    background-image: url('../../assets/icons/type1/subah-prayer.png'); /* Adjust path as needed */
+  }
+.icon-isha {
+    background-image: url('../../assets/icons/type1/subah-prayer.png'); /* Adjust path as needed */
+  }
