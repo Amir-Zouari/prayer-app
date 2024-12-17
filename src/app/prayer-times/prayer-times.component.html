@@ -1,38 +1,68 @@
 <div class="prayer-times-container">
-  <h1 class="today-heading">{{today}}</h1>
+  <!-- Today's Heading -->
+  <h1 class="today-heading">
+    <img
+      class="title-icon"
+      src="../../assets/icons/type1/islamic-mosque.png"
+      alt="Mosque Icon"
+    />
+    {{ title }} , {{ today }}
+  </h1>
+  <!-- Countdown Timer (Moved Above Prayer Times) -->
+  <div class="countdown-timer">
+    Next Prayer In:
+    {{ remainingTime }}
+  </div>
+
+
+  <!-- Prayer Times -->
   <div class="prayer-times-card">
     <ul class="prayer-times-list">
       <li class="prayer-time-item">
-        <img class="prayer-icon" src="../../assets/icons/type1/subah-prayer.png" alt="Sobh Icon" />
+        <img
+          class="prayer-icon"
+          src="../../assets/icons/type1/subah-prayer.png"
+          alt="Sobh Icon"
+        />
         <span class="prayer-name">Sobh:</span>
         <span class="prayer-time">{{ prayerTimes["sobh"] }}</span>
       </li>
-      
       <li class="prayer-time-item">
-        <img class="prayer-icon" src="../../assets/icons/type1/zuhar-prayer.png" alt="Isha Icon" />
-        <span class="prayer-name">Dhohr:</span> 
+        <img
+          class="prayer-icon"
+          src="../../assets/icons/type1/zuhar-prayer.png"
+          alt="Dhohr Icon"
+        />
+        <span class="prayer-name">Dhohr:</span>
         <span class="prayer-time">{{ prayerTimes["dhohr"] }}</span>
       </li>
       <li class="prayer-time-item">
-        <img class="prayer-icon" src="../../assets/icons/type1/asr-prayer.png" alt="Isha Icon" />
-        <span class="prayer-name">Aser:</span> 
+        <img
+          class="prayer-icon"
+          src="../../assets/icons/type1/asr-prayer.png"
+          alt="Asr Icon"
+        />
+        <span class="prayer-name">Aser:</span>
         <span class="prayer-time">{{ prayerTimes["aser"] }}</span>
       </li>
       <li class="prayer-time-item">
-        <img class="prayer-icon" src="../../assets/icons/type1/maghrib-prayer.png" alt="Isha Icon" />
-        <span class="prayer-name">Magreb:</span> 
+        <img
+          class="prayer-icon"
+          src="../../assets/icons/type1/maghrib-prayer.png"
+          alt="Magreb Icon"
+        />
+        <span class="prayer-name">Magreb:</span>
         <span class="prayer-time">{{ prayerTimes["magreb"] }}</span>
       </li>
       <li class="prayer-time-item">
-        <img class="prayer-icon" src="../../assets/icons/type1/isha-prayer.png" alt="Isha Icon" />
-        <span class="prayer-name">Isha:</span> 
+        <img
+          class="prayer-icon"
+          src="../../assets/icons/type1/isha-prayer.png"
+          alt="Isha Icon"
+        />
+        <span class="prayer-name">Isha:</span>
         <span class="prayer-time">{{ prayerTimes["isha"] }}</span>
       </li>
     </ul>
-  </div>
-
-  <h2 class="countdown-heading">Next Prayer Countdown</h2>
-  <div class="countdown-timer">
-    <p class="display-4">{{ remainingTime }}</p>
   </div>
 </div>

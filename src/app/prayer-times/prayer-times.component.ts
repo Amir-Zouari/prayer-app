@@ -14,6 +14,8 @@ export class PrayerTimesComponent implements OnInit {
   countdownInterval: any;
   prayerData: any = {}; // Holds the whole prayer times JSON data
   today = new Date().toISOString().split('T')[0];
+  title = 'Sfax';
+  prayerKeys: string[] = [];
 
   constructor(private prayerTimesService: PrayerTimesService) {}
 

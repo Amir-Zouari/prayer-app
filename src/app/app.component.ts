@@ -10,5 +10,5 @@ import { PrayerTimesComponent } from './prayer-times/prayer-times.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'prayer-app';
+  title = 'Sfax';
 }
