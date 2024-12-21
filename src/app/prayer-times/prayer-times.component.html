@@ -1,19 +1,25 @@
 <div class="prayer-times-container">
-  <!-- Today's Heading -->
-  <h1 class="today-heading">
-    <img
-      class="title-icon"
-      src="../../assets/icons/type1/islamic-mosque.png"
-      alt="Mosque Icon"
-    />
-    {{ title }} , {{ today }}
-  </h1>
+  <!-- Navigation Buttons -->
+  <div class="date-navigation">
+    <button class="nav-button" (click)="moveToPreviousDate()">
+      Previous &larr;
+    </button>
+    <!-- Today's Heading -->
+    <h1 class="today-heading">
+      <img
+        class="title-icon"
+        src="../../assets/icons/type1/islamic-mosque.png"
+        alt="Mosque Icon"
+      />
+      {{ title }} , {{ convertDateToYYYY_MM_DD(selectedDay) }}
+    </h1>
+    <button class="nav-button" (click)="moveToNextDate()">Next &rarr;</button>
+  </div>
   <!-- Countdown Timer (Moved Above Prayer Times) -->
-  <div class="countdown-timer">
+  <div *ngIf="isToday" class="countdown-timer">
     Next Prayer In:
     {{ remainingTime }}
   </div>
-
 
   <!-- Prayer Times -->
   <div class="prayer-times-card">

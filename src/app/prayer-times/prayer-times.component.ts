@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { PrayerTimesService } from '../services/prayer-times-service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-prayer-times',
   templateUrl: './prayer-times.component.html',
   styleUrls: ['./prayer-times.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [CommonModule],
 })
 export class PrayerTimesComponent implements OnInit {
   prayerTimes: { [key: string]: string } = {};
@@ -13,9 +15,11 @@ export class PrayerTimesComponent implements OnInit {
   remainingTime: string = '';
   countdownInterval: any;
   prayerData: any = {}; // Holds the whole prayer times JSON data
-  today = new Date().toISOString().split('T')[0];
+  //today = new Date().toISOString().split('T')[0];
+  selectedDay = new Date();
   title = 'Sfax';
   prayerKeys: string[] = [];
+  isToday: boolean = true;
 
   constructor(private prayerTimesService: PrayerTimesService) {}
 
@@ -38,9 +42,37 @@ export class PrayerTimesComponent implements OnInit {
     );
   }
 
+  convertDateToMM_DD(date: Date): string {
+    const dateString = new Intl.DateTimeFormat('en-US', {
+      month: '2-digit',
+      day: '2-digit',
+    })
+      .format(date)
+      .replace('/', '-'); // Get current date in format 'MM-DD'
+    return dateString;
+  }
+ /*  convertDateToYYYY_MM_DD(date: Date): string {
+    const year = date.getFullYear();
+    const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);    
+    const day = String(date.getDate()).padStart(2, '0'); // Pad day with 0
+    return `${year}-${month}-${day}`;
+  } */
+  convertDateToYYYY_MM_DD(date: Date): string {
+    const dateString = new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: '2-digit',
+    })
+      .format(date)
+      .replace('/', '-'); // Get current date in format 'MM-DD'
+    return dateString;
+  }
+
   getTodaysPrayerTimes() {
+    this.isToday = true;
     const today = new Date();
-    const dateString = today.toISOString().split('T')[0].slice(5); // Get current date in format 'MM-DD'
+    //console.log('today', today);
+    const dateString = this.convertDateToMM_DD(today);
     if (this.prayerData[dateString]) {
       this.prayerTimes = this.prayerData[dateString];
       this.startNextPrayerCountdown(); // Start the countdown for today's prayers
@@ -50,6 +82,11 @@ export class PrayerTimesComponent implements OnInit {
   }
 
   startNextPrayerCountdown() {
+    // Clear any existing countdown interval
+    if (this.countdownInterval) {
+      clearInterval(this.countdownInterval);
+    }
+    // Calculate the next prayer time and remaining time in seconds
     const now = new Date();
     //console.log("now",now);
     const nextPrayerTime = this.getNextPrayerTime(now);
@@ -60,22 +97,16 @@ export class PrayerTimesComponent implements OnInit {
   }
 
   startCountdown(remainingSeconds: number) {
-    let remaining = remainingSeconds;
-    //console.log("remaining",remaining);
-    // Clear any existing countdown interval to avoid multiple intervals
-    /* if (this.countdownInterval) {
-      clearInterval(this.countdownInterval);
-    } */
-
+    // Start a countdown interval
     this.countdownInterval = setInterval(() => {
-      if (remaining <= 0) {
+      if (remainingSeconds <= 0) {
+        clearInterval(this.countdownInterval);
         // Once countdown reaches 0, trigger the next prayer time calculation
         this.getTodaysPrayerTimes(); // Reload prayer times for the next day if needed
         this.startNextPrayerCountdown(); // Recalculate the next prayer time
-        clearInterval(this.countdownInterval);
       } else {
-        this.updateCountdownUI(remaining);
-        remaining--;
+        this.updateCountdownUI(remainingSeconds); // Update the countdown display
+        remainingSeconds--; // Decrement the countdown
       }
     }, 1000);
   }
@@ -89,9 +120,10 @@ export class PrayerTimesComponent implements OnInit {
   }
 
   getNextPrayerTime(currentTime: Date): Date {
-    const currentMinutes = currentTime.getHours() * 60 + currentTime.getMinutes();
+    const currentMinutes =
+      currentTime.getHours() * 60 + currentTime.getMinutes();
     let nextPrayerTime: Date = new Date(currentTime);
-    
+
     for (const [prayer, time] of Object.entries(this.prayerTimes)) {
       const [hours, minutes] = time.split(':').map(Number);
       const prayerTimeInMinutes = hours * 60 + minutes;
@@ -108,5 +140,33 @@ export class PrayerTimesComponent implements OnInit {
   calculateRemainingTime(currentTime: Date, nextPrayerTime: Date): number {
     const timeDifference = nextPrayerTime.getTime() - currentTime.getTime();
     return Math.floor(timeDifference / 1000); // Return remaining time in seconds
+  }
+
+  moveToPreviousDate() {
+    //console.log('before moving', this.selectedDay);
+    this.selectedDay.setDate(this.selectedDay.getDate() - 1);
+    //console.log('after moving', this.selectedDay); // Go back one day
+    this.getDayPrayerTimes(this.selectedDay);
+  }
+
+  moveToNextDate() {
+    this.selectedDay.setDate(this.selectedDay.getDate() + 1); // Move forward one day
+    this.getDayPrayerTimes(this.selectedDay);
+  }
+
+  getDayPrayerTimes(date: Date) {
+    this.selectedDay = date; // Get current date
+    const dataString = this.convertDateToMM_DD(this.selectedDay); // Format date as 'YYYY-MM-DD'
+    if (this.prayerData[dataString]) {
+      if (dataString == this.convertDateToMM_DD(new Date())) {
+        this.getTodaysPrayerTimes();
+      } else {
+        this.isToday = false;
+        this.prayerTimes = this.prayerData[dataString];
+        //console.log('prayer time for ', this.selectedDay, 'are loaded');
+      }
+    } else {
+      console.error('Prayer times not found for today.');
+    }
   }
 }

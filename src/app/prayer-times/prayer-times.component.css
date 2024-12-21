@@ -1,191 +1,228 @@
 /* General Typography */
-h1, h2 {
-    text-align: center;
-    font-size: 24px;
+h1,
+h2 {
+  text-align: center;
+  font-size: 24px;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 p {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f3f3f3;
-    color: #333;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+  color: #333;
 }
 
 /* Container Styling */
 .prayer-times-container {
-    padding: 15px;
-    background-color: #152238;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  background-color: #152238;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Heading Styles */
 .today-heading {
-    font-size: 1rem; /* Reduce the font size */
-    text-align: center;
-    color: #ffffff;
-    font-weight: 600; /* Make it more elegant */
-    margin-bottom: 15px;
-    font-family: 'Helvetica Neue', sans-serif; /* Use a modern, elegant font */
+  font-size: 1rem; /* Reduce the font size */
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600; /* Make it more elegant */
+  margin-bottom: 15px;
+  font-family: "Helvetica Neue", sans-serif; /* Use a modern, elegant font */
 }
 
 .countdown-heading {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-    color: #555;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  color: #555;
 }
 
 /* Prayer Times Card */
 .prayer-times-card {
-    background: linear-gradient(135deg, #457b9d, #1d3557);
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
+  background: linear-gradient(135deg, #457b9d, #1d3557);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
 }
 
 /* Prayer Times List */
 .prayer-times-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* Prayer Time Items */
 .prayer-time-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Prayer Icon */
 .prayer-icon {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
 /* Prayer Name and Time */
 .prayer-name {
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #f1faee;
-    flex-grow: 1; /* Push the prayer-time span to the far right */
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #f1faee;
+  flex-grow: 1; /* Push the prayer-time span to the far right */
 }
 
 .prayer-time {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-align: right;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: right;
 }
 
 /* Countdown Timer */
 /* Countdown Timer Styling */
 .countdown-timer {
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 8px 15px; /* Adjust padding to fit the smaller size */
-    background: linear-gradient(135deg, #e63946, #f37272);
-    color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    margin: 10px auto; /* Center the countdown with margin */
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 15px; /* Adjust padding to fit the smaller size */
+  background: linear-gradient(135deg, #e63946, #f37272);
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  margin: 10px auto; /* Center the countdown with margin */
 }
 
 .title-icon {
-    width: 20px; /* Smaller icon size */
-    height:20px;
-    margin-right: 2px;
+  width: 20px; /* Smaller icon size */
+  height: 20px;
+  margin-right: 2px;
 }
 .title-item {
-    
-    position: center;
-    padding: 5px;
+  position: center;
+  padding: 5px;
 }
 .title {
-    font-size: 0.9rem; /* Set font size */
-    font-weight: bold; /* Make the title bold */
-    color: #ffffff; /* Set text color */
-     /* Center the title */
-    font-family: 'Arial', sans-serif; /* Set a clean, readable font */
-    text-transform: capitalize; /* Capitalize the first letter of each word */
-    letter-spacing: 1px; /* Add a little letter spacing for a modern touch */
+  font-size: 0.9rem; /* Set font size */
+  font-weight: bold; /* Make the title bold */
+  color: #ffffff; /* Set text color */
+  /* Center the title */
+  font-family: "Arial", sans-serif; /* Set a clean, readable font */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  letter-spacing: 1px; /* Add a little letter spacing for a modern touch */
 }
 
+.date-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
+.nav-button {
+  background-color: #3d5a80;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+  background-color: #98c1d9;
+}
 
 /* Mobile Responsiveness for Small Screens */
 @media (max-width: 400px) {
-    .prayer-times-container {
-        padding: 10px;
-    }
+  .today-heading {
+    font-size: 0.7rem; /* Reduce the font size */
+    text-align: center;
+    color: #ffffff;
+    font-weight: 600; /* Make it more elegant */
+    margin-bottom: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-family: "Helvetica Neue", sans-serif; /* Use a modern, elegant font */
+  }
 
-    .countdown-timer {
-        margin-top: 10px; /* Keep some space at the top */
-        margin-bottom: 10px; /* Add margin to prevent crowding */
-        max-width: 175px; /* Ensure the countdown fits smaller screens */
-        height: auto; /* Let the height adjust based on content */
-    }
+  .nav-button {
+    padding: 2px 2px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 
+  .prayer-times-container {
+    padding: 10px;
+  }
 
+  .countdown-timer {
+    font-size: 0.8rem;
+    padding: 8px 15px; /* Adjust padding to fit the smaller size */
+    margin-top: 10px;
+    margin: 10px auto; /* Center the countdown with margin */
+    margin-top: 10px; /* Keep some space at the top */
+    margin-bottom: 10px; /* Add margin to prevent crowding */
+    max-width: 175px; /* Ensure the countdown fits smaller screens */
+  }
 
-    .today-heading {
-        font-size: 1rem; /* Slightly smaller font on very small screens */
-    }
-    .prayer-times-card {
-        padding: 10px;
-        margin-bottom: 10px;
-    }
+  .prayer-times-card {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 
-    .prayer-time-item {
-        flex-direction: row; /* Maintain horizontal layout */
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px;
-    }
+  .prayer-time-item {
+    flex-direction: row; /* Maintain horizontal layout */
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+  }
 
-    .prayer-icon {
-        width: 20px; /* Smaller icon size */
-        height: 20px;
-        margin-right: 10px;
-    }
+  .prayer-icon {
+    width: 20px; /* Smaller icon size */
+    height: 20px;
+    margin-right: 10px;
+  }
 
-    .prayer-name {
-        
-        margin-right: 5px;
-    }
+  .prayer-name {
+    margin-right: 5px;
+  }
 
-    .prayer-time {
-        text-align: right;
-        margin-left: 5px;
-    }
+  .prayer-time {
+    text-align: right;
+    margin-left: 5px;
+  }
 
-    .countdown-heading {
-        font-size: 1.2rem;
-        margin-top: 10px;
-    }
-
+  .countdown-heading {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
 }
